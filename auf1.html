@@ -47,8 +47,8 @@
     <script>
         function checkAnswer() {
             var answer = document.getElementById('answer').value.toLowerCase();
-            if (answer === 'unkraut') { // Ersetze 'Unkraut' mit dem tatsächlichen Lösungswort
-                window.location.href = 'next.html';
+            if (answer === 'papa wutz') { // Ersetze 'Unkraut' mit dem tatsächlichen Lösungswort
+                window.location.href = 'next1.html';
             } else {
                 alert('Falsches Lösungswort. Bitte versuche es erneut.');
             }
@@ -56,11 +56,11 @@
     </script>
 </head>
 <body>
-    <h1>Willkommen zur Schnitzeljagd</h1>
+    <h1>Frage 1</h1>
     <div class="container">
-        <h2>Was wächst im Grünen Klassenzimmer?</h2>
-        <p>Tipp: Du kannst auch mit deinem iPad recherchieren.</p>
-        <p>Gib das Lösungswort ein, um zur nächsten Seite zu gelangen:</p>
+        <h1>Frage:Wie heißt der Vater von Peppa Wutz?</h1>
+        <p>Tipp:Papa und danch musst du raten was könnte nur der nachname sein?</p> 
+        <p>Gib das Lösungswort ein, um witer zu kommen:</p>
         <input type="text" id="answer" placeholder="Lösungswort">
         <button onclick="checkAnswer()">Überprüfen</button>
     </div>
