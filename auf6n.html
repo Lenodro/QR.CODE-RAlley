@@ -47,7 +47,7 @@
     <script>
         function checkAnswer() {
             var answer = document.getElementById('answer').value.toLowerCase();
-            if (answer === '45 Minuten') { // Ersetze 'Unkraut' mit dem tatsächlichen Lösungswort
+            if (answer === '45 minuten') { // Ersetze 'Unkraut' mit dem tatsächlichen Lösungswort
                 window.location.href = 'nextm6.html';
             } else {
                 alert('Falsches Lösungswort. Bitte versuche es erneut.');
@@ -61,6 +61,7 @@
 <body>
     <div class="container">
      <h1> Wie viele Minuten benötigt die Kreuzspinne für ein großes Spinnennetz?
+     <p> Schreibe so .. Minuten
         <input type="text" id="answer" placeholder="Lösungswort">
       <button onclick="checkAnswer()">Abschicken</button>
     </button>
