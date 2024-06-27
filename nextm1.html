@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schnitzeljagd - QR-Code Scannen</title>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d0f0c0; /* Hellgrüner Hintergrund */
+            color: #2f4f2f; /* Dunkelgrüner Text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        video {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px 0;
+            border: 2px solid #9acd32;
+            border-radius: 10px;
+        }
+        #canvas {
+            display: none;
+        }
+    </style>
+    <script>
+        function startQRScanner() {
+            const video = document.createElement("video");
+            const canvasElement = document.getElementById("canvas");
+            const canvas = canvasElement.getContext("2d");
+            const outputData = document.getElementById("outputData");
+
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function (stream) {
+                video.srcObject = stream;
+                video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+                video.play();
+                document.getElementById("videoContainer").appendChild(video);
+                requestAnimationFrame(tick);
+            }).catch(function (err) {
+                console.error("Error accessing the camera: " + err);
+                alert("Fehler beim Zugriff auf die Kamera: " + err.message);
+            });
+
+            function tick() {
+                if (video.readyState === video.HAVE_ENOUGH_DATA) {
+                    canvasElement.height = video.videoHeight;
+                    canvasElement.width = video.videoWidth;
+                    canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+                    const imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
+                    const code = jsQR(imageData.data, imageData.width, imageData.height, {
+                        inversionAttempts: "dontInvert",
+                    });
+                    if (code) {
+                        outputData.innerText = code.data;
+                        // Hier kannst du eine Aktion basierend auf dem QR-Code durchführen
+                        if (code.data === '4829173650') { // Ersetze 'geheimcode' durch den tatsächlichen QR-Code-Inhalt
+                            window.location.href = 'auf1.html'; // Ersetze 'final.html' durch die Zielseite
+                        } else {
+                            alert('Unbekannter QR Code: ' + code.data);
+                        }
+                    }
+                }
+                requestAnimationFrame(tick);
+            }
+        }
+
+        window.onload = startQRScanner;
+    </script>
+</head>
+<body>
+    <h1>QR-Code scannen</h1>
+    <div id="videoContainer">
+        <video id="video"></video>
+        <canvas id="canvas"></canvas>
+        <p id="outputData"></p>
+    </div>
+</body>
+</html>
