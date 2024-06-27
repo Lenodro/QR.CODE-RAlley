@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deutsch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d0f0c0; /* Hellgrüner Hintergrund */
+            color: #2f4f2f; /* Dunkelgrüner Text */
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .container {
+            background-color: #f5fff5; /* Sehr hellgrüner Hintergrund für den Container */
+            border: 2px solid #9acd32; /* Olivgrüner Rand */
+            border-radius: 10px;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 128, 0, 0.2);
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #9acd32;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #9acd32;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #8fbc8f;
+        }
+    </style>
+    <script>
+        function checkAnswer() {
+            var answer = document.getElementById('answer').value.toLowerCase();
+             if (answer === 'kiemenähnlichen organe.') { 
+                window.location.href = 'nextn1.html';
+            } else {
+                alert('FALSCH!!!!!!!!!!!!!!');
+            }
+        }
+    </script>
+</head>
+        <picture>
+            <img src="logok.png" alt="fehler">
+        </picture>
+<body>
+    <div class="container">
+        <h1>Wie fühlt sich die Natur an? Mache dich auf die Suche nach unterschiedlichen 
+Oberflächen und fühle darüber, z B. Rinde, Gras, Erde, Holz…
+Schreibe mindestens 10 Adjektive auf, die die verschiedenen Oberflächen 
+beschreiben.</h1>
+        <input type="text" id="answer" placeholder="Lösungswort">
+        <button onclick="window.location.href = 'nextd1.html';">
+        Weiter
+    </button>
+    </div>
+</body>
+</html>
