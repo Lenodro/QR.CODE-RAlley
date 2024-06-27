@@ -47,7 +47,7 @@
     <script>
         function checkAnswer() {
             var answer = document.getElementById('answer').value.toLowerCase();
-            if (answer === 'start') { // Ersetze 'Unkraut' mit dem tatsächlichen Lösungswort
+            if (answer === 'nw') { // Ersetze 'Unkraut' mit dem tatsächlichen Lösungswort
                 window.location.href = 'nextn.html';
             } else {
                 alert('Falsches Lösungswort. Bitte versuche es erneut.');
@@ -58,8 +58,7 @@
 <body>
     <h1>Willkommen zur Schnitzeljagd</h1>
     <div class="container">
-        <p>Herzlich Willkommen</p>
-        <P>Gib Start ein um Anzufangen. </P>
+        <h1>wie wird das Fach "Naturwissenschaften abgekürtz?</h1>
         <input type="text" id="answer" placeholder="Lösungswort">
         <button onclick="checkAnswer()">Überprüfen</button>
     </div>
