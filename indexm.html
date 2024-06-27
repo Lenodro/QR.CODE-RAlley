@@ -47,7 +47,7 @@
     <script>
         function checkAnswer() {
             var answer = document.getElementById('answer').value.toLowerCase();
-            if (answer === 'start') { // Ersetze 'Unkraut' mit dem tatsächlichen Lösungswort
+            if (answer === '2') { // Ersetze 'Unkraut' mit dem tatsächlichen Lösungswort
                 window.location.href = 'nextm.html';
             } else {
                 alert('Falsches Lösungswort. Bitte versuche es erneut.');
@@ -58,8 +58,10 @@
 <body>
     <h1>Willkommen zur Schnitzeljagd</h1>
     <div class="container">
-        <p>Herzlich Willkommen</p>
-        <P>Gib Start ein um Anzufangen. </P>
+        <h2>Herzlich Wilkommen</h2>
+        <h2>und viel spaß bei der rallye</h2>
+        <p>Wie Lautet dan Ergebnis?</p>
+        <p>1+1=</p>
         <input type="text" id="answer" placeholder="Lösungswort">
         <button onclick="checkAnswer()">Überprüfen</button>
     </div>
