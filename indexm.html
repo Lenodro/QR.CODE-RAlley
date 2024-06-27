@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #0080ff; /* Hellgrüner Hintergrund */
+            background-color: #d0f0c0; /* Hellgrüner Hintergrund */
             color: #2f4f2f; /* Dunkelgrüner Text */
             margin: 0;
             padding: 0;
@@ -17,7 +17,7 @@
         }
         .container {
             background-color: #f5fff5; /* Sehr hellgrüner Hintergrund für den Container */
-            border: 2px solid #0062ff; /* Olivgrüner Rand */
+            border: 2px solid #9acd32; /* Olivgrüner Rand */
             border-radius: 10px;
             margin: 20px auto;
             padding: 20px;
@@ -47,8 +47,8 @@
     <script>
         function checkAnswer() {
             var answer = document.getElementById('answer').value.toLowerCase();
-            if (answer === 'unkraut') { // Ersetze 'Unkraut' mit dem tatsächlichen Lösungswort
-                window.location.href = 'next.html';
+            if (answer === 'start') { // Ersetze 'Unkraut' mit dem tatsächlichen Lösungswort
+                window.location.href = 'nextm.html';
             } else {
                 alert('Falsches Lösungswort. Bitte versuche es erneut.');
             }
@@ -58,9 +58,8 @@
 <body>
     <h1>Willkommen zur Schnitzeljagd</h1>
     <div class="container">
-        <h2>Was wächst im Grünen Klassenzimmer?</h2>
-        <p>Tipp: Du kannst auch mit deinem iPad recherchieren.</p>
-        <p>Gib das Lösungswort ein, um zur nächsten Seite zu gelangen:</p>
+        <p>Herzlich Willkommen</p>
+        <P>Gib Start ein um Anzufangen. </P>
         <input type="text" id="answer" placeholder="Lösungswort">
         <button onclick="checkAnswer()">Überprüfen</button>
     </div>

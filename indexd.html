@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #eeff00; /* Hellgrüner Hintergrund */
-            color: #2f4f2f; /* Dunkelgrüner Text */
+            background-color: #ffff00; /* Hellgrüner Hintergrund */
+            color: #7f7900; /* Dunkelgrüner Text */
             margin: 0;
             padding: 0;
         }
@@ -17,7 +17,7 @@
         }
         .container {
             background-color: #f5fff5; /* Sehr hellgrüner Hintergrund für den Container */
-            border: 2px solid #f2ff00; /* Olivgrüner Rand */
+            border: 2px solid #ffd606; /* Olivgrüner Rand */
             border-radius: 10px;
             margin: 20px auto;
             padding: 20px;
@@ -28,11 +28,11 @@
             width: calc(100% - 22px);
             padding: 10px;
             margin: 10px 0;
-            border: 2px solid #9acd32;
+            border: 2px solid #eaff00;
             border-radius: 5px;
         }
         button {
-            background-color: #9acd32;
+            background-color: #eaff00;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -41,14 +41,14 @@
             font-size: 16px;
         }
         button:hover {
-            background-color: #8fbc8f;
+            background-color: #9ba900;
         }
     </style>
     <script>
         function checkAnswer() {
             var answer = document.getElementById('answer').value.toLowerCase();
-            if (answer === 'unkraut') { // Ersetze 'Unkraut' mit dem tatsächlichen Lösungswort
-                window.location.href = 'next.html';
+            if (answer === 'start') { // Ersetze 'Unkraut' mit dem tatsächlichen Lösungswort
+                window.location.href = 'nextd.html';
             } else {
                 alert('Falsches Lösungswort. Bitte versuche es erneut.');
             }
@@ -58,9 +58,8 @@
 <body>
     <h1>Willkommen zur Schnitzeljagd</h1>
     <div class="container">
-        <h2>Was wächst im Grünen Klassenzimmer?</h2>
-        <p>Tipp: Du kannst auch mit deinem iPad recherchieren.</p>
-        <p>Gib das Lösungswort ein, um zur nächsten Seite zu gelangen:</p>
+        <p>Herzlich Willkommen</p>
+        <P>Gib Start ein um Anzufangen. </P>
         <input type="text" id="answer" placeholder="Lösungswort">
         <button onclick="checkAnswer()">Überprüfen</button>
     </div>
